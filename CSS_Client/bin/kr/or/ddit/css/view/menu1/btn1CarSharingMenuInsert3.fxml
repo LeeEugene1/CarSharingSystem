@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane fx:id="communityMainRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.css.view.menu1.btn1CarSharingMenuController3">
+   <children>
+      <VBox prefHeight="768.0" prefWidth="1170.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="80.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <HBox prefHeight="80.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="lbTitle" text="카셰어링" textFill="#f8f8f8">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="200.0">
+                     <padding>
+                        <Insets left="20.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="lbTitle1" text="차종 &gt; 차량  &gt; 날짜 및 시간 &gt;" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbTitle11" text=" 픽업장소" textFill="#beac83">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbTitle12" text=" &gt; 보험 &gt; 결제" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox fillHeight="false" prefHeight="500.0" prefWidth="500.0">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="5.0" top="50.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <VBox fillWidth="false" prefHeight="480.0" prefWidth="540.0">
+                     <children>
+                        <WebView fx:id="webView2" prefHeight="468.0" prefWidth="651.0">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                        </WebView>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="633.0" prefWidth="772.0">
+                     <children>
+                        <HBox fx:id="mapView" fillHeight="false" prefHeight="403.0" prefWidth="699.0">
+                           <children>
+                              <WebView fx:id="webView" prefHeight="427.0" prefWidth="680.0">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="5.0" />
+                                 </HBox.margin>
+                              </WebView>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="mapView1" fillHeight="false" prefHeight="88.0" prefWidth="699.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#resetClicked" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../../../../../img/reset_icon.png" />
+                                 </image>
+                              </ImageView>
+                              <VBox prefHeight="88.0" prefWidth="366.0">
+                                 <children>
+                                    <TextField fx:id="tfAddr1" prefHeight="23.0" prefWidth="430.0" promptText="기본주소" style="-fx-alignment: center;">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="tfAddr2" prefHeight="23.0" prefWidth="430.0" promptText="상세주소" style="-fx-alignment: center;">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="120.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="mapView11" fillHeight="false" prefHeight="0.0" prefWidth="699.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#btnPrevious" text="이전단계">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#btnNext" text="다음단계">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children></VBox>
+   </children>
+</AnchorPane>

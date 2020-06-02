@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="communityboard">
+								<!-- resultClass="board.vo.JdbcBoardVO" -->
+	<select id="getAllBoardList" resultClass="CBoardVo">
+		select board_id, board_title, mem_id, 
+			board_date, 
+			board_cnt,
+			board_content,
+			board_img 
+		from communityboard 
+		order by board_id desc
+	</select>
+	
+	<insert id="insertBoard" parameterClass="CBoardVo">
+		insert into communityboard(board_id, board_title, mem_id, board_date, board_cnt, board_content,board_img)
+		values(board_seq.nextval,#board_title#,#mem_id#, sysdate, 0, #board_content#,#board_img#)
+	</insert>
+		
+	<update id="updateBoard" parameterClass="CBoardVo">
+		update communityboard
+		set board_title = #board_title#,
+		board_content = #board_content#,
+		board_date = sysdate,
+		board_img=#board_img#
+		where board_id = #board_id#
+	</update>
+	
+	<delete id="boardDelete" parameterClass="int">
+		delete from communityboard where board_id = #board_id#
+	</delete>
+	
+	<update id="setCountIncrement" parameterClass="int">
+		update communityboard set board_cnt = board_cnt + 1 where board_id = #board_id#
+	</update>
+	
+	<select id="getSearchBoardList" resultClass="CBoardVo" parameterClass="String">
+		select board_id, board_title, mem_id, board_date, board_cnt, board_content,board_img 
+		from communityboard where board_title like '%' || #board_title%# || '%' order by board_id desc
+	</select>
+	
+	
+</sqlMap>

@@ -1,0 +1,31 @@
+/* got my icons for free from https://icons8.com */
+#vb-sidebar .sidebar-button {
+    -fx-background-color:black;
+    -fx-text-fill: white;
+    -fx-cursor:hand;
+}
+
+#vb-sidebar .sidebar-button:hover {
+    -fx-background-color:#333333;
+    -fx-text-fill: #999999;
+    -fx-cursor:hand;
+}
+
+#vb-sidebar .sidebar-button-active {
+    -fx-background-color:#333333;
+    -fx-text-fill: white;
+    -fx-cursor:hand;
+}
+
+#vb-sidebar .slider-button {
+    -fx-background-color:#333333;
+    -fx-text-fill: white;
+    -fx-cursor:hand;
+}
+
+
+#vb-sidebar .slider-button:hover {
+    -fx-background-color:#333333;
+    -fx-text-fill: #999999;
+    -fx-cursor:hand;
+}

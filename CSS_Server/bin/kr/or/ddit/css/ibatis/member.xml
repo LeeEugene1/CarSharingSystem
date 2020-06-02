@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="member">
+	<insert id="memInsert" parameterClass="memVo">
+		insert into member (mem_id, mem_name, mem_pw, mem_birth, mem_email, mem_gender, mem_tel, mem_addr, mem_class, mem_blacklist, blacklist_point, mem_active)
+		values (#mem_id#, #mem_name#, #mem_pw#, #mem_birth#, #mem_email#, #mem_gender#, #mem_tel#, #mem_addr#, #mem_class#, #mem_blacklist#, #blacklist_point#, #mem_active#)
+	</insert>
+	
+	<select id="checkId" resultClass="String" parameterClass="String">
+		select mem_id from member where mem_id = #mem_id#
+	</select>
+	
+<!-- 	<delete id="memDelete" parameterClass="String"> -->
+<!-- 		delete from member where mem_id = #mem_id# -->
+<!-- 	</delete> -->
+	
+	<update id="memUpdate" parameterClass="String">
+		update member
+		set mem_active = 'N'
+		where mem_id = #mem_id#
+	</update>
+	
+	<update id="blacklistMemberUpdate" parameterClass="String">
+		update member 
+		set mem_blacklist= 'Y'
+		where mem_id = #mem_id#
+	</update>
+	
+	<update id="memInfoUpdate" parameterClass="memVo">
+		update member
+		set mem_pw = #mem_pw#, mem_email = #mem_email#, mem_tel=#mem_tel#, mem_addr=#mem_addr#
+		where mem_id = #mem_id#
+	</update>
+	
+	<select id="checkPw" resultClass="String" parameterClass="HashMap">
+		select mem_pw from member where mem_id = #memId# and mem_pw = #encryptedPw#
+	</select>
+	
+
+
+</sqlMap>	

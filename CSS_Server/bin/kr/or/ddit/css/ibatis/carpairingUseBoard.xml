@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="carpairingUseboard">
+<!-- 								resultClass="board.vo.JdbcBoardVO" -->
+	<select id="getAllBoardList" resultClass="CPUBVo">
+		select pairinguseboard_id, pairinguseboard_title, mem_id, admin_id, 
+			pairinguseboard_date, 
+			pairinguseboard_cnt,
+			pairinguseboard_content,
+			pairinguseboard_carnum,
+			pairinguseboard_rentcost,
+			pairinguseboard_drivecost,
+			pairinguseboard_img1,
+			pairinguseboard_img2,
+			pairinguseboard_img3
+		from carpairinguseboard 
+		order by pairinguseboard_id desc
+	</select>
+	
+	<insert id="insertBoard" parameterClass="CPUBVo">
+		insert into carpairinguseboard(pairinguseboard_id, pairinguseboard_title, mem_id, admin_id, pairinguseboard_date, pairinguseboard_cnt, pairinguseboard_content,pairinguseboard_carnum,pairinguseboard_rentcost,pairinguseboard_drivecost,pairinguseboard_img1,pairinguseboard_img2,pairinguseboard_img3)
+		values(pairinguserboard_seq.nextval,#pairinguseboard_title#,#mem_id#,#admin_id#, sysdate, 0, #pairinguseboard_content#, #pairinguseboard_carnum#,#pairinguseboard_rentcost#,#pairinguseboard_drivecost#,#pairinguseboard_img1#,#pairinguseboard_img2#,#pairinguseboard_img3#)
+	</insert>
+		
+	<update id="updateBoard" parameterClass="CPUBVo">
+		update carpairinguseboard
+		set pairinguseboard_title = #pairinguseboard_title#,
+		pairinguseboard_content = #pairinguseboard_content#,
+		pairinguseboard_date = sysdate,
+		pairinguseboard_carnum=#pairinguseboard_carnum#,
+		pairinguseboard_rentcost=#pairinguseboard_rentcost#,
+		pairinguseboard_drivecost=#pairinguseboard_drivecost#,
+		pairinguseboard_img1=#pairinguseboard_img1#,
+		pairinguseboard_img2=#pairinguseboard_img2#,
+		pairinguseboard_img3=#pairinguseboard_img3#
+		where pairinguseboard_id = #pairinguseboard_id#
+	</update>
+	
+	<delete id="boardDelete" parameterClass="int">
+		delete from carpairinguseboard where pairinguseboard_id = #pairinguseboard_id#
+	</delete>
+	
+	<update id="setCountIncrement" parameterClass="int">
+		update carpairinguseboard set pairinguseboard_cnt = pairinguseboard_cnt + 1 where pairinguseboard_id = #pairinguseboard_id#
+	</update>
+	
+	<select id="getSearchBoardList" resultClass="CPUBVo" parameterClass="String">
+		select pairinguseboard_id, pairinguseboard_title, mem_id, admin_id, 
+			pairinguseboard_date, 
+			pairinguseboard_cnt,
+			pairinguseboard_content,
+			pairinguseboard_carnum,
+			pairinguseboard_rentcost,
+			pairinguseboard_drivecost,
+			pairinguseboard_img1,
+			pairinguseboard_img2,
+			pairinguseboard_img3 
+		from carpairinguseboard where pairinguseboard_title like '%' || #pairinguseboard_title%# || '%' order by pairinguseboard_id desc
+	</select>
+	
+	<delete id="boardDeleteApply" parameterClass="HashMap">
+		delete from carpairinguseboard where pairinguseboard_carnum = #carnum# and mem_id=#memid#
+	</delete>
+	
+</sqlMap>

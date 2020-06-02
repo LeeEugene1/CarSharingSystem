@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="carpairingInsertboard">
+<!-- 								resultClass="board.vo.JdbcBoardVO" -->
+	<select id="getAllBoardList" resultClass="CPIBVo">
+		select pairinginsertboard_id, pairinginsertboard_title, mem_id, 
+			pairinginsertboard_date, 
+			pairinginsertboard_cnt,
+			pairinginsertboard_content,
+			pairinginsertboard_carnum,
+			pairinginsertboard_rentcost,
+			pairinginsertboard_drivecost,
+			pairinginsertboard_img1,
+			pairinginsertboard_img2,
+			pairinginsertboard_img3
+		from carpairinginsertboard 
+		order by pairinginsertboard_id desc
+	</select>
+	
+	<insert id="insertBoard" parameterClass="CPIBVo">
+		insert into carpairinginsertboard(pairinginsertboard_id, pairinginsertboard_title, mem_id, pairinginsertboard_date, pairinginsertboard_cnt, pairinginsertboard_content,pairinginsertboard_carnum,pairinginsertboard_rentcost,pairinginsertboard_drivecost,pairinginsertboard_img1,pairinginsertboard_img2,pairinginsertboard_img3)
+		values(pairinginsertboard_seq.nextval,#pairinginsertboard_title#,#mem_id#, sysdate, 0, #pairinginsertboard_content#, #pairinginsertboard_carnum#,#pairinginsertboard_rentcost#,#pairinginsertboard_drivecost#,#pairinginsertboard_img1#,#pairinginsertboard_img2#,#pairinginsertboard_img3#)
+	</insert>
+		
+	<update id="updateBoard" parameterClass="CPIBVo">
+		update carpairinginsertboard
+		set pairinginsertboard_title = #pairinginsertboard_title#,
+		pairinginsertboard_content = #pairinginsertboard_content#,
+		pairinginsertboard_date = sysdate,
+		pairinginsertboard_carnum=#pairinginsertboard_carnum#,
+		pairinginsertboard_rentcost=#pairinginsertboard_rentcost#,
+		pairinginsertboard_drivecost=#pairinginsertboard_drivecost#,
+		pairinginsertboard_img1=#pairinginsertboard_img1#,
+		pairinginsertboard_img2=#pairinginsertboard_img2#,
+		pairinginsertboard_img3=#pairinginsertboard_img3#
+		where pairinginsertboard_id = #pairinginsertboard_id#
+	</update>
+	
+	<delete id="boardDelete" parameterClass="int">
+		delete from carpairinginsertboard where pairinginsertboard_id = #pairinginsertboard_id#
+	</delete>
+	
+	<update id="setCountIncrement" parameterClass="int">
+		update carpairinginsertboard set pairinginsertboard_cnt = pairinginsertboard_cnt + 1 where pairinginsertboard_id = #pairinginsertboard_id#
+	</update>
+	
+	<select id="getSearchBoardList" resultClass="CPIBVo" parameterClass="String">
+		select pairinginsertboard_id, pairinginsertboard_title, mem_id, 
+			pairinginsertboard_date, 
+			pairinginsertboard_cnt,
+			pairinginsertboard_content,
+			pairinginsertboard_carnum,
+			pairinginsertboard_rentcost,
+			pairinginsertboard_drivecost,
+			pairinginsertboard_img1,
+			pairinginsertboard_img2,
+			pairinginsertboard_img3 
+		from carpairinginsertboard where mem_id like '%' || #mem_id%# || '%' order by pairinginsertboard_id desc
+	</select>
+	
+	
+</sqlMap>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="payment">
+
+	<insert id="insertPayment" parameterClass="payVo">
+		insert into payment(payment_id, payment_date, payment_cost, rent_id, mem_id, card_num)
+		values(payment_seq.nextval,TO_DATE(#payment_date#, 'yyyy/MM/dd hh24:mi'),#payment_cost#, #rent_id#, #mem_id#, #card_num#)
+	</insert>
+	
+</sqlMap>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="card">
+
+	<select id="getAllCard" resultClass="cardVo">
+		
+		select card_num, card_pw, card_month, card_year, mem_id
+		from card
+		
+	</select>
+	
+	<insert id="insertCard" parameterClass="cardVo">
+		
+		insert into card(card_num,card_pw,card_month,card_year,mem_id)
+		values(#card_num#,#card_pw#,#card_month#,#card_year#,#mem_id#)
+	
+	</insert>
+
+	<delete id="deleteCard" parameterClass="String">
+		delete from card where mem_id = #mem_id#
+		
+	</delete>
+	
+	
+	<select id="getMemCard" parameterClass="String" resultClass="cardVo">
+		
+		select card_num, card_pw, card_month, card_year, mem_id
+		from card 
+		where mem_id=#mem_id#
+		
+	</select>
+
+</sqlMap>	

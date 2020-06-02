@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.css.view.menu2.btn2EventController">
+   <children>
+      <VBox prefHeight="768.0" prefWidth="1170.0" style="-fx-background-color: black;">
+         <children>
+            <VBox prefHeight="80.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <HBox prefHeight="80.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="lbTitle" text="이벤트/쿠폰" textFill="#f8f8f8">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="200.0">
+                     <padding>
+                        <Insets left="20.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="lbTitle11" text="진행중인 이벤트" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbTitle1" textFill="#beac83">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" onMouseClicked="#event1Clicked" prefHeight="300.0" prefWidth="400.0">
+                     <children>
+                        <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/eventbanner1.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="아시아나 더블마일리지 이벤트" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="2020.02.01 ~ 2020.03.01" textFill="#beac83" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+                  <VBox alignment="CENTER" onMouseClicked="#event2Clicked" prefHeight="200.0" prefWidth="400.0">
+                     <children>
+                        <ImageView fitHeight="300.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/eventbanner2.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="[친환경 캠페인] 카쉐어링 10% 추가할인" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="2020.02.01 ~ 2020.02.29" textFill="#beac83" />
+                     </children>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="150.0" />
+               </VBox.margin></HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

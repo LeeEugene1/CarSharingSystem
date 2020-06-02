@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="cardRoot" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.css.view.card.cardViewController">
+   <children>
+      <VBox prefHeight="768.0" prefWidth="1170.0" style="-fx-background-color: black;">
+         <children>
+            <VBox prefHeight="80.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <HBox prefHeight="80.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="lbTitle" text="개인정보" textFill="#f8f8f8">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="200.0">
+                     <padding>
+                        <Insets left="20.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="lbTitle11" text="마이페이지 &gt; " textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbTitle1" text="결제카드 조회" textFill="#beac83">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <AnchorPane prefHeight="452.0" prefWidth="1170.0">
+               <children>
+                  <HBox alignment="CENTER" layoutY="137.0" prefHeight="100.0" prefWidth="1170.0">
+                     <children>
+                        <Label fx:id="cardCheck" textAlignment="CENTER" textFill="#beac83">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hbox1" alignment="CENTER" layoutY="292.0" prefHeight="36.0" prefWidth="1170.0">
+                     <children>
+                        <Label text="카드번호 : " textAlignment="CENTER" textFill="#beac83">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="cardNum" textAlignment="CENTER" textFill="#beac83">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hbox3" alignment="CENTER" layoutY="341.0" prefHeight="36.0" prefWidth="1170.0">
+                     <children>
+                        <Label text="회원이름 : " textAlignment="CENTER" textFill="#beac83">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="cardMemName" textAlignment="CENTER" textFill="#beac83">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <HBox>
+               <children>
+                  <Button fx:id="btnInsert" mnemonicParsing="false" onAction="#InsertOk" text="등록">
+                     <HBox.margin>
+                        <Insets left="550.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteOk" text="취소">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="80.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

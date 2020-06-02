@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="notice">
+								<!-- resultClass="board.vo.JdbcBoardVO" -->
+	<select id="getAllNBoardList" resultClass="noticeVo">
+		select notice_id, notice_title, admin_id,
+			notice_date, 
+			notice_cnt,
+			notice_content 
+		from notice 
+		order by notice_id desc
+<!-- 		SELECT 	* -->
+<!-- 		FROM	NOTICE -->
+<!-- 		ORDER BY 1 DESC; -->
+	</select>
+	
+	<insert id="insertNBoard" parameterClass="noticeVo">
+		insert into notice(notice_id, notice_title, admin_id, notice_date, notice_cnt, notice_content)
+		values(notice_seq.nextval,#notice_title#,#admin_id#, sysdate, 0, #notice_content#)
+	</insert>
+		
+	<update id="updateNBoard" parameterClass="noticeVo">
+		update notice set notice_title = #notice_title#, notice_content = 
+		#notice_content#, notice_date = sysdate where notice_id = #notice_id#
+	</update>
+	
+	<delete id="boardNDelete" parameterClass="int">
+		delete from notice where notice_id = #notice_id#
+	</delete>
+	
+	<update id="setCountIncrement" parameterClass="int">
+		update notice set notice_cnt = notice_cnt + 1 where notice_id = #notice_id#
+	</update>
+	
+	<select id="getSearchNBoardList" resultClass="noticeVo" parameterClass="String">
+		select notice_id, notice_title, admin_id, notice_date, notice_cnt,notice_content 
+		from notice where notice_title like '%' || #notice_title%# || '%' order by notice_id desc
+	</select>
+	
+	
+</sqlMap>

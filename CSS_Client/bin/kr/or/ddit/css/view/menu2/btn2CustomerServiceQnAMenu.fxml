@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="QnAMainRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../menu1/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.css.view.menu2.btn2CustomerServiceQnAMenuController">
+   <children>
+      <VBox prefHeight="768.0" prefWidth="1170.0" style="-fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="80.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <HBox prefHeight="80.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="lbTitle" text="고객센터" textFill="#f8f8f8">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="200.0">
+                     <padding>
+                        <Insets left="20.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="lbTitle1" text="QnA" textFill="#979696">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <VBox>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="324.0">
+                           <children>
+                              <Button fx:id="insertBtn" mnemonicParsing="false" onMouseClicked="#boardInsertClicked" text="글쓰기" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" top="30.0" />
+                     </VBox.margin>
+                  </VBox>
+               </children>
+            </VBox>
+            <TableView fx:id="tbResult" onMouseClicked="#tbResultView" prefHeight="534.0" prefWidth="1170.0">
+              <columns>
+                  <TableColumn minWidth="0.0" prefWidth="0.0" />
+                <TableColumn fx:id="coltitle" maxWidth="0.0" minWidth="870.0" prefWidth="639.0" text="제목" />
+                  <TableColumn fx:id="coldate" minWidth="150.0" prefWidth="75.0" style="-fx-alignment: center;" text="작성일" />
+                  <TableColumn fx:id="colcount" minWidth="150.0" prefWidth="150.0" style="-fx-alignment: center;" text="조회" />
+              </columns>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </TableView>
+            <Pagination fx:id="pageView" prefHeight="114.0" prefWidth="1500.0">
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Pagination>
+            <HBox alignment="CENTER">
+               <children>
+                  <TextField fx:id="tfSearch" prefWidth="150.0" />
+                  <ImageView fx:id="btnSearch" fitHeight="25.0" fitWidth="25.0" onMouseClicked="#boardSearch" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../img/search_icon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </HBox>
+         </children></VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+
+ <sqlMap namespace="login">
+	
+	<select id="loginSelect" parameterClass="String" resultClass="kr.or.ddit.css.vo.MemberVO">
+		select * from member where mem_id = #mem_id#
+	</select>
+	
+	<select id="loginIdCheck"  parameterClass="String" resultClass="int">
+		select
+		count(mem_id) from member
+		where mem_id = #mem_id#
+	</select>
+	
+	<select id="adminLoginSelect" parameterClass="String" resultClass="kr.or.ddit.css.vo.AdminVO">
+		select * from admin where admin_id = #admin_id#
+	</select>
+	
+	<select id="loginAdminIdCheck"  parameterClass="String" resultClass="int">
+		select
+		count(admin_id) from admin
+		where admin_id = #admin_id#
+	</select>
+	
+	<select id="idSearch" parameterClass="HashMap" resultClass="String">
+		select mem_id
+		from member
+		where mem_name = #memName# and mem_email = #memEmail#
+	</select>
+	
+	<select id="pwSearch" parameterClass="HashMap" resultClass="String">
+		select mem_pw
+		from member
+		where mem_id = #memId# and mem_name = #memName# and mem_email = #memEmail#
+	</select>
+	
+	<update id="pwUpdate" parameterClass="memVo">
+		update member
+		set mem_pw = #mem_pw#
+		where mem_id = #mem_id# and mem_name = #mem_name# and mem_email = #mem_email#
+	</update>
+
+<!-- 	<select id="login.passCheck"> -->
+<!-- 		select mem_id  -->
+<!-- 		,mem_pass -->
+<!-- 		,mem_name -->
+<!-- 		,mem_bir -->
+<!-- 		,mem_mail -->
+<!-- 		,mem_phone -->
+<!-- 		,mem_addr -->
+<!-- 		,mem_point -->
+<!-- 		,mem_mileage -->
+<!-- 		,mem_indate -->
+<!-- 		,mem_grade -->
+<!-- 		,mem_recipe -->
+<!-- 		,mem_chef -->
+<!-- 		,mem_zip -->
+<!-- 		from member -->
+<!-- 		where mem_id = #mem_id# -->
+<!-- 		and mem_phone = #mem_phone# -->
+<!-- 	</select> -->
+	
+<!-- 	<update id="login.updpass" parameterClass="kr.or.ddit.whateat.vo.login.LoginVO"> -->
+<!-- 		update member -->
+<!-- 		set mem_pass = #mem_pass# -->
+<!-- 		where mem_id = #mem_id# -->
+<!-- 	</update> -->
+		
+
+</sqlMap>

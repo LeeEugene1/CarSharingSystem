@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="500.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.css.view.chat.ClientMainController">
+   <children>
+      <Separator layoutY="174.0" prefWidth="500.0" />
+      <TextArea fx:id="taOutputMsg" disable="true" editable="false" layoutX="10.0" layoutY="186.0" prefHeight="200.0" prefWidth="477.0" />
+      <TextField fx:id="tfMsg" disable="true" layoutX="14.0" layoutY="398.0" prefHeight="29.0" prefWidth="394.0" />
+      <Button fx:id="btnSend" disable="true" layoutX="419.0" layoutY="398.0" mnemonicParsing="false" text="보내기" />
+      <Label layoutX="230.0" layoutY="126.0" text="이 름 : " textFill="WHITE" />
+      <TextField fx:id="tfName" layoutX="287.0" layoutY="121.0" prefHeight="29.0" prefWidth="200.0" />
+      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../img/logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="184.0" layoutY="52.0" text="실시간 상담Talk" textFill="#beac83">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

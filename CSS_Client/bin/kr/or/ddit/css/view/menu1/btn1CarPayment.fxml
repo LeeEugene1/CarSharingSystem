@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="PaymentRoot" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.css.view.menu1.btn1CarPaymentController">
+   <children>
+      <VBox prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: black;">
+         <children>
+            <VBox prefHeight="666.0" prefWidth="500.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <HBox alignment="CENTER" fillHeight="false" prefHeight="80.0" prefWidth="500.0">
+                     <children>
+                        <Label fx:id="lbTitle" text="신용카드 결제" textFill="#f8f8f8">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="30.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ImageView fx:id="cashImage" fitHeight="97.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="141.0" prefWidth="500.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="149.0" prefWidth="500.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="6.0" prefWidth="500.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="15.0" prefWidth="72.0" text="결제금액" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="90.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="payArea" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="500.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="15.0" prefWidth="72.0" text="결제일" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="90.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="payDate" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="500.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="72.0" text="카드종류" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="90.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ComboBox fx:id="cardTypeBox" prefHeight="23.0" prefWidth="109.0" promptText="카드사 선택">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </ComboBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="500.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="72.0" text="카드번호" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="90.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="cardNum1" prefHeight="23.0" prefWidth="60.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Label text="-" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="cardNum2" prefHeight="23.0" prefWidth="60.0" />
+                                    <Label text="-" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <PasswordField fx:id="cardNum3" prefWidth="60.0" />
+                                    <Label text="-" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <PasswordField fx:id="cardNum4" prefWidth="60.0" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="500.0">
+                                 <children>
+                                    <Label alignment="CENTER_RIGHT" prefWidth="72.0" text="유효기간" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="90.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="monthArea" prefHeight="23.0" prefWidth="60.0" promptText="month">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="yearArea" prefHeight="23.0" prefWidth="60.0" promptText="year">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="500.0">
+                                 <children>
+                                    <Label text="카드비밀번호" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="90.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <PasswordField fx:id="pwArea" prefWidth="60.0">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </PasswordField>
+                                    <Label text="(비밀번호 앞 2자리)" textFill="WHITE">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="80.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="900.0" prefWidth="450.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="140.0" prefWidth="450.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#PaymentBtn" text="결제하기">
+                                       <HBox.margin>
+                                          <Insets top="30.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

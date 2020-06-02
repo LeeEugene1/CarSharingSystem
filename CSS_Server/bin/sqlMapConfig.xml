@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+	"https://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+	
+<sqlMapConfig>
+	<!-- DB와 연결할 때 필요한 정보를 properties파일에 걸정해 놓고
+		 이 properties파일의 내용을 읽어와서 설정한다. -->
+	<properties resource="sqlMapConfig.properties"/>
+	
+	<!-- maxRequests : 동시에 SQL문을 수행할 Thread 수  (기본값 : 512)
+		 maxSessions : 주어진 시간동안 활성화 될수있는 세션 수  (기본값 : 128)
+		 maxTransactions : setTransaction에 들어갈 수 있는 Thread 수 (기본값 : 32)	
+		 
+		 maxRequests >= maxSessions >= maxTransactions -->
+		 
+	<settings cacheModelsEnabled="true"
+			  enhancementEnabled="true"
+			  lazyLoadingEnabled="true"
+			  maxRequests="32"
+			  maxSessions="10"
+			  maxTransactions="5"
+			  useStatementNamespaces="true"/>
+			  
+	<!-- iBatis에서 사용할 자바의 클래스파일(VO클래스 등)을 사용할 때는 그 클래스의 전체 이름(패키지명 까지 포함된 이름)을 사용해야 되는데, 
+		 이렇게 되면 전체 이름의 길이가 길어질 수 있는데 이것을 간단한 Alias로 대신할 수 있도록 설정하기 
+		 예)<typeAlias alias = "alias명" type-"클래스의 전체 이름"/>
+	-->
+
+		<typeAlias alias="admVo" type="kr.or.ddit.css.vo.AdminVO"/>
+		<typeAlias alias="bCarVo" type="kr.or.ddit.css.vo.BestCarVO"/>
+		<typeAlias alias="bListVo" type="kr.or.ddit.css.vo.BlackListVO"/>
+		<typeAlias alias="cardVo" type="kr.or.ddit.css.vo.CardVO"/>
+		<typeAlias alias="CPIBVo" type="kr.or.ddit.css.vo.CarPairingInsertBoardVO"/>
+		<typeAlias alias="CPUBVo" type="kr.or.ddit.css.vo.CarPairingUseBoardVO"/>
+		<typeAlias alias="CType" type="kr.or.ddit.css.vo.CarTypeVO"/>
+		<typeAlias alias="carVo" type="kr.or.ddit.css.vo.CarVO"/>
+		<typeAlias alias="CBoardVo" type="kr.or.ddit.css.vo.CommunityBoardVO"/>
+		<typeAlias alias="CBook" type="kr.or.ddit.css.vo.CouponBookVO"/>
+		<typeAlias alias="insVo" type="kr.or.ddit.css.vo.InsuranceVO"/>
+		<typeAlias alias="licenseVo" type="kr.or.ddit.css.vo.LicenseVO"/>
+		<typeAlias alias="MCoupon" type="kr.or.ddit.css.vo.MemberCouponVO"/>
+		<typeAlias alias="memVo" type="kr.or.ddit.css.vo.MemberVO"/>
+		<typeAlias alias="noticeVo" type="kr.or.ddit.css.vo.NoticeVO"/>
+		<typeAlias alias="payVo" type="kr.or.ddit.css.vo.PaymentVO"/>
+		<typeAlias alias="qnaVo" type="kr.or.ddit.css.vo.QnAVO"/>
+		<typeAlias alias="rentVo" type="kr.or.ddit.css.vo.RentVO"/>		
+	
+	<!-- DB와 연결을 처리하는 부분 : slqMapConfig.properties파일에 설정된 값을 가져와서 셋팅한다. -->
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="${driver}"/>
+			<property name="JDBC.ConnectionURL" value="${url}"/>
+			<property name="JDBC.Username" value="${user}"/>
+			<property name="JDBC.Password" value="${pass}"/>
+		</dataSource>
+	</transactionManager>	
+	
+	<!-- 
+		실행할 SQL문은 xml문서로 따로 만든 후 그 xml문서를 이곳에 등록해 준다.
+		등록하는 예) <sqlMap resource="경로명/파일명.xml"/>
+	 -->
+
+	<sqlMap resource="kr/or/ddit/css/ibatis/member.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/login.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/board.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/notice.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/carSharing.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/blacklist.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/carpairingInsertBoard.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/carpairingUseBoard.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/license.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/insurance.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/card.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/QnA.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/payment.xml"/>
+	<sqlMap resource="kr/or/ddit/css/ibatis/rent.xml"/>
+			  
+</sqlMapConfig>	

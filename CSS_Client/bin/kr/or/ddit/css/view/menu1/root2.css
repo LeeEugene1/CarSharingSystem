@@ -1,0 +1,141 @@
+/* got my icons for free from https://icons8.com */
+
+
+#vb-sidebar .sidebar-button {
+    -fx-background-color:black;
+    -fx-text-fill: white;
+    -fx-cursor:hand;
+}
+
+#vb-sidebar .sidebar-button:hover {
+    -fx-background-color:#333333;
+    -fx-text-fill: #999999;
+    -fx-cursor:hand;
+}
+
+#vb-sidebar .sidebar-button-active {
+    -fx-background-color:#333333;
+    -fx-text-fill: white;
+    -fx-cursor:hand;
+}
+
+#vb-sidebar .slider-button {
+    -fx-background-color:#333333;
+    -fx-text-fill: white;
+    -fx-cursor:hand;
+}
+
+
+#vb-sidebar .slider-button:hover {
+    -fx-background-color:#333333;
+    -fx-text-fill: #999999;
+    -fx-cursor:hand;
+}
+
+ /*
+ * Empty Stylesheet file.
+ */
+   .my-buttonCarPairingSignout {
+	-fx-graphic:url("img/car_icon_signout_white.png");
+}
+	.my-buttonCarPairingSignout:hover {
+	-fx-graphic:url("img/car_icon_signout.png");
+}
+  .my-buttonCarPairing {
+	-fx-graphic:url("img/car_icon_share.png");
+}
+	.my-buttonCarPairing:hover {
+	-fx-graphic:url("img/car_icon_share_gold.png");
+}
+ .my-buttonUser {
+	-fx-graphic:url("img/car_icon_User_white.png");
+}
+.my-buttonUser:hover {
+	-fx-graphic:url("img/car_icon_User.png");
+}
+.my-button {
+	-fx-graphic:url("img/car_icon_big.png");
+}
+.my-button:hover {
+	-fx-graphic:url("img/car_icon_big_grey.png");
+}
+.my-buttonMiddleCar {
+	-fx-graphic:url("img/car_icon_middle.png");
+}
+.my-buttonMiddleCar:hover {
+	-fx-graphic:url("img/car_icon_middle_grey.png");
+}
+.my-buttonSmallCar {
+	-fx-graphic:url("img/car_icon_mini.png");
+}
+.my-buttonSmallCar:hover {
+	-fx-graphic:url("img/car_icon_mini_grey.png");
+}
+.my-buttonSUVCar {
+	-fx-graphic:url("img/car_icon_SUV.png");
+}
+.my-buttonSUVCar:hover {
+	-fx-graphic:url("img/car_icon_SUV_grey.png");
+}
+.my-buttonSportsCar {
+	-fx-graphic:url("img/car_icon_sports.png");
+}
+.my-buttonSportsCar:hover {
+	-fx-graphic:url("img/car_icon_sports_grey.png");
+}
+
+.table-row-cell {
+    -fx-skin: "com.sun.javafx.scene.control.skin.TableRowSkin";
+    /*-fx-background-insets: 0, 0 0 1 0;*/
+    -fx-padding: 0.0em;
+    /* 0 */
+    -fx-text-fill: #fff;
+    -fx-text-inner-color: #fff;
+    -fx-background-color: black;
+    -fx-table-cell-border-color: black;
+    -fx-table-header-border-color: black;
+}
+
+.table-row-cell:focused {
+    /*-fx-background-insets: 0, 1, 2;*/
+    -fx-background-color: black;
+    -fx-table-cell-border-color: black;
+    -fx-table-header-border-color: black;
+}
+
+.table-view:focused .table-row-cell:filled:selected .table-cell {
+    -fx-background-color: black;
+    -fx-text-fill: #fff;
+}
+
+
+/* When the TableView is _not_ focused, we show alternate selection colors */
+
+.table-row-cell:filled:selected:focused,
+.table-row-cell:filled:selected {
+    -fx-background-color: black;
+}
+
+.table-view:row-selection .table-row-cell:filled:hover {
+    -fx-background-color: #BEAC83;
+    /*-fx-text-fill: -fx-text-inner-color;*/
+    -fx-text-fill: #fff;
+    -fx-table-cell-border-color: black;
+    -fx-table-header-border-color: black;
+}
+
+.table-view:row-selection .table-row-cell:filled:focused:hover {
+    -fx-background-color: #BEAC83;
+    /*-fx-text-fill: -fx-text-inner-color;*/
+    -fx-text-fill: #fff;
+    -fx-table-cell-border-color: black;
+    -fx-table-header-border-color: black;
+}
+
+.table-view:focused .table-row-cell:filled:selected .table-cell:hover {
+    -fx-background-color: #BEAC83;
+    /*-fx-text-fill: -fx-text-inner-color;*/
+    -fx-text-fill: #fff;
+    -fx-table-cell-border-color: black;
+    -fx-table-header-border-color: black;
+}

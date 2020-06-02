@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="blacklist">
+								<!-- resultClass="board.vo.JdbcBoardVO" -->
+	<select id="getAllBoardList" resultClass="bListVo">
+		select blacklist_id, blacklist_title, mem_id, 
+			blacklist_date, 
+			blacklist_cnt,
+			blacklist_content,
+			blacklist_img,
+			blacklist_claimid
+		from blacklist
+		order by blacklist_id desc
+	</select>
+	
+	<insert id="insertBoard" parameterClass="bListVo">
+		insert into blacklist(blacklist_id, blacklist_title, mem_id, blacklist_date, blacklist_cnt, blacklist_content, blacklist_img, blacklist_claimid)
+		values(blacklist_seq.nextval,#blacklist_title#,#mem_id#, sysdate, 0, #blacklist_content#, #blacklist_img#, #blacklist_claimid#)
+	</insert>
+	
+	<update id="updateBoard" parameterClass="bListVo">
+		update blacklist
+		set blacklist_title = #blacklist_title#,
+		blacklist_content = #blacklist_content#,
+		blacklist_date = sysdate,
+		blacklist_img = #blacklist_img#,
+		blacklist_claimid = #blacklist_claimid#
+		where blacklist_id = #blacklist_id#
+	</update>
+	
+	<delete id="boardDelete" parameterClass="int">
+		delete from blacklist where blacklist_id = #blacklist_id#
+	</delete>
+	
+	<update id="setCountIncrement" parameterClass="int">
+		update blacklist set blacklist_cnt = blacklist_cnt + 1 where blacklist_id = #blacklist_id#
+	</update>
+	
+		<select id="getSearchBoardList" resultClass="bListVo" parameterClass="String">
+		select blacklist_id, blacklist_title, mem_id, blacklist_date, blacklist_cnt, blacklist_content, blacklist_claimid 
+		from blacklist where blacklist_title like '%' || #blacklist_title%# || '%' 
+		
+		order by blacklist_id desc
+	</select>
+	
+	
+</sqlMap>

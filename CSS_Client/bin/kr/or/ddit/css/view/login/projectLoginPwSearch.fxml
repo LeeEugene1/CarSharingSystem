@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pwSearchPane" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.css.view.login.projectLoginPwSearchController">
+   <children>
+      <HBox prefHeight="768.0" prefWidth="1280.0" style="-fx-background-color: black;" />
+      <VBox prefHeight="768.0" prefWidth="1280.0">
+         <children>
+            <HBox alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../img/logo.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="50.0" top="100.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="80.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="36.0" prefWidth="491.0" text="비밀번호 찾기" textFill="WHITE">
+                     <font>
+                        <Font name="Times New Roman" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="13.0" prefWidth="1280.0">
+               <children>
+                  <Label text="아이디" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="10.0" top="55.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="idArea" prefHeight="30.0" prefWidth="200.0" promptText="아이디">
+                     <HBox.margin>
+                        <Insets right="70.0" top="50.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="1240.0">
+               <children>
+                  <Label text="이름" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="10.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="nameArea" prefHeight="30.0" prefWidth="200.0" promptText="이름">
+                     <HBox.margin>
+                        <Insets right="70.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="40.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="TOP_CENTER">
+               <children>
+                  <Label text="이메일 주소" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="10.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="emailArea" prefHeight="30.0" prefWidth="200.0" promptText="email">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#pwCheckClicked" prefHeight="30.0" prefWidth="100.0" text="이메일 전송">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="40.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="1240.0">
+               <children>
+                  <TextField fx:id="pwArea" prefHeight="30.0" prefWidth="200.0" promptText="임시 비밀번호">
+                     <HBox.margin>
+                        <Insets right="70.0" top="10.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets left="73.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#pwChangeClicked" prefHeight="30.0" prefWidth="100.0" text="다음">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#loginClicked" prefHeight="30.0" prefWidth="100.0" text="로그인 화면">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="50.0" top="50.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

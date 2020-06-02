@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="carSharing">
+
+	<select id="getAllCarList" resultClass="carVo">
+		select car_num, car_name, car_oiltype, car_rentcost, car_drivecost, car_option, car_active, cartype_id,car_img,car_img1,car_img2,car_img3
+		from car where cartype_id = #cartype_id#
+		order by car_num desc
+	</select>
+	
+	<select id="getCarName" resultClass="String" parameterClass="String">
+		select car_name from car where car_num=#car_num#
+	</select>
+	
+</sqlMap>

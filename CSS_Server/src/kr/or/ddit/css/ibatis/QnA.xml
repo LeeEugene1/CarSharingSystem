@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="qna">
+								<!-- resultClass="board.vo.JdbcBoardVO" -->
+	<select id="getAllQnAList" resultClass="qnaVo">
+		select qna_id, qna_title, admin_id,
+			qna_date, 
+			qna_cnt,
+			qna_content 
+		from qna 
+		order by qna_id desc
+<!-- 		SELECT 	* -->
+<!-- 		FROM	NOTICE -->
+<!-- 		ORDER BY 1 DESC; -->
+	</select>
+	
+	<insert id="insertQnA" parameterClass="qnaVo">
+		insert into qna(qna_id, qna_title, admin_id, qna_date, qna_cnt, qna_content)
+		values(qna_seq.nextval,#qna_title#,#admin_id#, sysdate, 0, #qna_content#)
+	</insert>
+		
+	<update id="updateQnA" parameterClass="qnaVo">
+		update qna set qna_title = #qna_title#, qna_content = 
+		#qna_content#, qna_date = sysdate where qna_id = #qna_id#
+	</update>
+	
+	<delete id="QnADelete" parameterClass="int">
+		delete from qna where qna_id = #qna_id#
+	</delete>
+	
+	<update id="setCountIncrement" parameterClass="int">
+		update qna set qna_cnt = qna_cnt + 1 where qna_id = #qna_id#
+	</update>
+	
+	<select id="getSearchQnAList" resultClass="qnaVo" parameterClass="String">
+		select qna_id, qna_title, admin_id, qna_date, qna_cnt,qna_content 
+		from qna where qna_title like '%' || #qna_title%# || '%' order by qna_id desc
+	</select>
+	
+	
+</sqlMap>

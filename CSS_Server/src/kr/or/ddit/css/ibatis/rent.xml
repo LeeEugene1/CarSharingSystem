@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+	
+<sqlMap namespace="rent">
+
+	<insert id="insertRent" parameterClass="rentVo">
+		insert into rent(rent_id, rent_start, rent_end, rent_cost, rent_status, mem_id, car_num, ins_id, rent_addr)
+		values(rent_seq.nextval, TO_DATE(#rent_start#, 'yyyy/MM/dd hh24:mi'), TO_DATE(#rent_end#, 'yyyy/MM/dd hh24:mi'), #rent_cost#, #rent_status#, #mem_id#, #car_num#, #ins_id#, #rent_addr#)
+	</insert>
+	
+	<select id="selectRentId" resultClass="int" parameterClass="String">
+		select rent_id
+		from rent
+		where mem_id = #mem_id#
+	</select>
+	
+	<select id="getAllRentList" resultClass="rentVo" parameterClass="String">
+		select rent_id, rent_start, rent_end, rent_cost, rent_status, rent_addr, mem_id, car_num, ins_id
+		from rent where mem_id = #mem_id#
+	</select>
+	
+</sqlMap>
